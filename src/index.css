@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+}
+
+.font-display {
+  font-family: 'Fredoka', 'Nunito', system-ui, sans-serif;
+}
+
+.font-mono-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tactile 3D Arcade Cartoon Buttons */
+.btn-3d {
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 140ms cubic-bezier(0.16, 1, 0.3, 1), filter 140ms ease;
+}
+
+.btn-3d:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.04);
+}
+
+.btn-3d:active:not(:disabled) {
+  transform: translateY(4px);
+}
+
+.btn-3d-green {
+  background: linear-gradient(180deg, #4ade80 0%, #16a34a 100%);
+  box-shadow: 0 6px 0 #14532d, 0 10px 20px rgba(20, 83, 45, 0.35);
+  border: 3px solid #dcfce7;
+}
+.btn-3d-green:active:not(:disabled) {
+  box-shadow: 0 2px 0 #14532d, 0 4px 8px rgba(20, 83, 45, 0.3);
+}
+
+.btn-3d-amber {
+  background: linear-gradient(180deg, #fbbf24 0%, #d97706 100%);
+  box-shadow: 0 6px 0 #78350f, 0 10px 20px rgba(120, 53, 15, 0.3);
+  border: 3px solid #fef3c7;
+}
+.btn-3d-amber:active:not(:disabled) {
+  box-shadow: 0 2px 0 #78350f, 0 4px 8px rgba(120, 53, 15, 0.25);
+}
+
+.btn-3d-orange {
+  background: linear-gradient(180deg, #fb923c 0%, #ea580c 100%);
+  box-shadow: 0 8px 0 #7c2d12, 0 14px 26px rgba(124, 45, 18, 0.42);
+  border: 4px solid #ffedd5;
+}
+.btn-3d-orange:active:not(:disabled) {
+  box-shadow: 0 2px 0 #7c2d12, 0 6px 12px rgba(124, 45, 18, 0.35);
+}
+
+.btn-3d-blue {
+  background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%);
+  box-shadow: 0 6px 0 #0c4a6e, 0 10px 20px rgba(12, 74, 110, 0.3);
+  border: 3px solid #e0f2fe;
+}
+.btn-3d-blue:active:not(:disabled) {
+  box-shadow: 0 2px 0 #0c4a6e, 0 4px 8px rgba(12, 74, 110, 0.25);
+}
+
+.btn-3d-slate {
+  background: linear-gradient(180deg, #f8fafc 0%, #cbd5e1 100%);
+  box-shadow: 0 5px 0 #64748b, 0 8px 16px rgba(15, 23, 42, 0.2);
+  border: 3px solid #ffffff;
+}
+.btn-3d-slate:active:not(:disabled) {
+  box-shadow: 0 2px 0 #64748b, 0 4px 8px rgba(15, 23, 42, 0.15);
+}
+
+.btn-3d-red {
+  background: linear-gradient(180deg, #f87171 0%, #dc2626 100%);
+  box-shadow: 0 6px 0 #7f1d1d, 0 10px 20px rgba(127, 29, 29, 0.35);
+  border: 3px solid #fee2e2;
+}
+.btn-3d-red:active:not(:disabled) {
+  box-shadow: 0 2px 0 #7f1d1d, 0 4px 8px rgba(127, 29, 29, 0.25);
+}
+
+.text-stroke-dark {
+  -webkit-text-stroke: 2px #14532d;
+  paint-order: stroke fill;
+}
+
+.text-stroke-title {
+  -webkit-text-stroke: 8px #14532d;
+  paint-order: stroke fill;
+  text-shadow: 0 8px 0 #052e16;
+}
+
+@keyframes floatPop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0) scale(0.6);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -18px) scale(1.15);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -68px) scale(0.95);
+  }
+}
+
+.animate-float-pop {
+  animation: floatPop 850ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes wiggleSlow {
+  0%, 100% {
+    transform: rotate(-1.5deg) scale(1);
+  }
+  50% {
+    transform: rotate(1.5deg) scale(1.02);
+  }
+}
+
+.animate-logo-wiggle {
+  animation: wiggleSlow 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-logo-wiggle,
+  .animate-float-pop {
+    animation: none;
+  }
+}

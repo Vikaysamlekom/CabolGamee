@@ -1,0 +1,6 @@
+{
+  "name": "CABOL - Cabut Bool",
+  "description": "Game kasual komedi 3D mencabut rumput dengan gaya jongkok dan goyangan pinggul paling kocak di kebun cerah.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
